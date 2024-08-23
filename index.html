@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/footballgame.css">
+</head>
+<body>
+  <a href="./"><img class="logo" src="assets/endzone-logo.png" alt="Football Game Logo"></a>
+  <p class="text-center">Let's Play and let's get Drunk!</p>
+  <div>
+    <button class="btn btn-primary btn-block" onclick="singlePlayerPage()">Single Player</button>
+    <button class="btn btn-primary btn-block" onclick="multiplayerPage()">Multiplayer</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="scripts/roomManager.js"></script>
+  <script type="module">
+    import { generateHand } from './scripts/footballGame.js';
+    window.generateHand = generateHand;
+    //window.playCard = playCard;
+  </script>
+  <script>
+    function singlePlayerPage() {
+      window.location.href = "/singlePlayer"
+    }
+    function multiplayerPage() {
+      window.location.href = "/multiplayer";
+    }
+  </script>
+</body>
+</html>
